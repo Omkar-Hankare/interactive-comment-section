@@ -6,7 +6,7 @@ const nextConfig = {
     return [
       {
         source: "/",
-        destination: "/interactiveComments",
+        destination: "/interactive-comments",
         permanent: true,
       },
     ];
