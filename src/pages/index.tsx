@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Trading Journal</title>
-        <meta name="Trading Journal" content="" />
+        <title>Interactive Comment Section</title>
+        <meta name="Interactive Comment Section" content="" />
         <link rel="icon" href="" />
       </Head>
 

@@ -12,6 +12,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.10.17",
     "@types/node": "18.11.12",
     "@types/react": "18.0.26",
@@ -30,5 +31,6 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "type": "module"
 }
