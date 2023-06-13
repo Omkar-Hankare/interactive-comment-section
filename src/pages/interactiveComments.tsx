@@ -1,27 +1,22 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import ScrollTop from "../components/common/ScrollToTop";
+import ScrollTop from "../components/common/ScrollToAElement";
+import CommentContainer from "../components/interactiveComments/CommentContainer";
+import NavBar from "../components/common/NavBar";
+import ScrollToAElement from "../components/common/ScrollToAElement";
 
 export default function BackToTop() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar>
-        <Toolbar>
-          <Typography variant="h6" component="div">
-            Interactive Comment Section
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      <NavBar title="Interactive Comment Section" />
       <Toolbar id="back-to-top-anchor" />
-      <Container>
+      <Container maxWidth="md">
         <Box sx={{ my: 2 }}>
           {[...new Array(12)]
             .map(
@@ -32,13 +27,17 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
             )
             .join("\n")}
         </Box>
+
+        {/* ////////////_____Interactive Comment Section starts______/////////// */}
+
+        <CommentContainer />
       </Container>
 
-      <ScrollTop>
+      <ScrollToAElement querySelectorValue="#back-to-top-anchor">
         <Fab size="small" aria-label="scroll back to top">
           <KeyboardArrowUpIcon />
         </Fab>
-      </ScrollTop>
+      </ScrollToAElement>
     </React.Fragment>
   );
 }

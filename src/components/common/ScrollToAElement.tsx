@@ -2,11 +2,13 @@ import { useScrollTrigger, Fade, Box } from "@mui/material";
 import React from "react";
 
 interface Props {
+  window?: Window;
   children: React.ReactElement;
+  querySelectorValue: string;
 }
 
-function ScrollTop(props: Props) {
-  const { children } = props;
+function ScrollToAElement(props: Props) {
+  const { children, window, querySelectorValue } = props;
 
   const trigger = useScrollTrigger({
     target: window ? window : undefined,
@@ -17,7 +19,7 @@ function ScrollTop(props: Props) {
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const anchor = (
       (event.target as HTMLDivElement).ownerDocument || document
-    ).querySelector("#back-to-top-anchor");
+    ).querySelector(querySelectorValue);
 
     if (anchor) {
       anchor.scrollIntoView({
@@ -39,4 +41,4 @@ function ScrollTop(props: Props) {
   );
 }
 
-export default ScrollTop;
+export default ScrollToAElement;
