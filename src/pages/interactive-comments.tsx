@@ -35,13 +35,24 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
           <Box sx={{ display: "grid", gap: 2 }}>
             <Box
               sx={{
-                width: "5%",
-                backgroundColor: "#EEEEEE",
-                ml: "50%",
-                mt: "10%",
+                gridRow: "1",
+                gridColumn: "1 /span 6",
               }}
-            ></Box>
-            <Box>
+            >
+              <Box
+                sx={{
+                  backgroundColor: "#EEEEEE",
+                  margin: "10% 40% 0 60%",
+                  width: "10px",
+                  height: "100%",
+                }}
+              />
+            </Box>
+            <Box
+              sx={{
+                gridColumn: "7 / span 2",
+              }}
+            >
               <SubCommentContainer />
               <SubCommentContainer />
               <SubCommentContainer />
