@@ -29,24 +29,7 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
 
         {/* ////////////_____Interactive Comment Section starts______/////////// */}
         <div>
-          <CommentContainer isSeparateComment={true} />
-          <Box sx={{ display: "grid", gap: 2 }}>
-            <Box
-              sx={{
-                gridRow: "1",
-                gridColumn: "1 /span 6",
-              }}
-            >
-              <Box
-                sx={{
-                  backgroundColor: "#EEEEEE",
-                  margin: "10% 40% 0 60%",
-                  width: "10px",
-                  height: "100%",
-                }}
-              />
-            </Box>
-          </Box>
+          <CommentContainer />
         </div>
       </Container>
 
