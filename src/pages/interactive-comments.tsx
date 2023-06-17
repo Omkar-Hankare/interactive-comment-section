@@ -1,19 +1,17 @@
-import * as React from "react";
 import Toolbar from "@mui/material/Toolbar";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Fab from "@mui/material/Fab";
 import { KeyboardArrowUp } from "@mui/icons-material";
-import ScrollTop from "../components/common/ScrollToAElement";
 import CommentContainer from "../components/interactiveComments/CommentContainer";
 import NavBar from "../components/common/NavBar";
 import ScrollToAElement from "../components/common/ScrollToAElement";
-import SubCommentContainer from "../components/interactiveComments/SubCommentContainer";
+import { Fragment } from "react";
 
 export default function InteractiveComments() {
   return (
-    <React.Fragment>
+    <Fragment>
       <CssBaseline />
       <NavBar title="Interactive Comment Section" />
       <Toolbar id="back-to-top-anchor" />
@@ -48,15 +46,6 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
                 }}
               />
             </Box>
-            <Box
-              sx={{
-                gridColumn: "7 / span 2",
-              }}
-            >
-              <SubCommentContainer />
-              <SubCommentContainer />
-              <SubCommentContainer />
-            </Box>
           </Box>
         </div>
       </Container>
@@ -66,6 +55,6 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
           <KeyboardArrowUp />
         </Fab>
       </ScrollToAElement>
-    </React.Fragment>
+    </Fragment>
   );
 }
