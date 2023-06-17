@@ -1,15 +1,21 @@
 import { Box } from "@mui/material";
 import React, { useMemo, useState, useCallback } from "react";
-import Comment from "./Comment";
+import Comment from "./Comment/comment";
 import { COMMENTS } from "../../configs/constants/interactiveComments.constants";
 import { ICommentInfo } from "../../configs/types/interactiveComments.types";
 
 const CommentContainer = () => {
   const [listOfComments, setListOfComments] = useState<ICommentInfo>(COMMENTS);
 
+  /**
+   * Generates recursive comments based on the given comment data.
+   * @param {Object} commentData - The data of the comment.
+   * @param {string} prevIndex - The previous index.
+   * @returns {JSX.Element} The generated comment component.
+   */
   const recursiveCommentGenerator = useCallback(
     (commentData: ICommentInfo, prevIndex: string) => {
-      const { content, userName, lastModified, children, votes } = commentData;
+      const { children } = commentData;
       const styles = {
         borderLeftStyle: prevIndex === "0" ? "none" : "solid",
         pt: prevIndex === "0" ? 0 : 3,
@@ -22,13 +28,7 @@ const CommentContainer = () => {
       return (
         <Box key={`Box_${prevIndex}`} sx={styles}>
           {/* rendering current comment */}
-          <Comment
-            key={`Comment_${prevIndex}`}
-            content={content}
-            votes={votes}
-            lastModified={lastModified}
-            userName={userName}
-          />
+          <Comment key={`Comment_${prevIndex}`} commentData={commentData} />
           {/* rendering children comments recursively  */}
           {children?.map((child: ICommentInfo, index: number) =>
             recursiveCommentGenerator(child, `${prevIndex}_${index + 1}`)

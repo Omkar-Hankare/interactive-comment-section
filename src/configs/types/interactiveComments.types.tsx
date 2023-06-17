@@ -2,6 +2,6 @@ export interface ICommentInfo {
   content: string;
   userName: string;
   lastModified: any;
-  children: ICommentInfo[];
+  children: any[];
   votes: number;
 }

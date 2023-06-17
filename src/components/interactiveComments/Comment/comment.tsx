@@ -3,21 +3,13 @@ import React from "react";
 import {
   StyledCommentPaper,
   StyledCommentPaperSxProp,
-} from "../../styles/components/interactiveComments/CommentContainer.styles";
-import { VoteBox } from "./VoteBox";
+} from "../../../styles/components/interactiveComments/CommentContainer.styles";
 import { UserInfo } from "./UserInfo";
+import { VoteBox } from "./VoteBox";
+import { ICommentInfo } from "@/src/configs/types/interactiveComments.types";
 
-const Comment = ({
-  userName,
-  lastModified,
-  votes,
-  content,
-}: {
-  userName: any;
-  lastModified: any;
-  votes: number;
-  content: string;
-}) => {
+const Comment = ({ commentData }: { commentData: ICommentInfo }) => {
+  const { content, userName, lastModified, votes } = commentData;
   return (
     <StyledCommentPaper elevation={4} sx={StyledCommentPaperSxProp}>
       <VoteBox votes={votes} />

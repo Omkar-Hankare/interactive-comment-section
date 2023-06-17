@@ -3,14 +3,19 @@ import { useState, useMemo } from "react";
 import {
   StyledVoteBox,
   StyledVoteBoxSxProp,
-} from "../../styles/components/interactiveComments/CommentContainer.styles";
+} from "../../../styles/components/interactiveComments/CommentContainer.styles";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 
 export const VoteBox = ({ votes }: { votes: number }) => {
   const [voteCount, setvoteCount] = useState<number>(votes);
 
-  function incrementVoteCount() {
+  /**
+   * Increments the vote count based on certain conditions.
+   * Updates the vote count state.
+   * @returns {void}
+   */
+  function incrementVoteCount(): void {
     if (voteCount === votes) {
       setvoteCount(voteCount + 1);
     } else if (voteCount === votes - 1) {
@@ -20,7 +25,12 @@ export const VoteBox = ({ votes }: { votes: number }) => {
     }
   }
 
-  function decrementVoteCount() {
+  /**
+   * Decrements the vote count based on certain conditions.
+   * Updates the vote count state.
+   * @returns {void}
+   */
+  function decrementVoteCount(): void {
     if (voteCount === votes) {
       setvoteCount(voteCount - 1);
     } else if (voteCount === votes + 1) {
