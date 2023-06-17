@@ -9,12 +9,12 @@ import { VoteBox } from "./VoteBox";
 import { ICommentInfo } from "@/src/configs/types/interactiveComments.types";
 
 const Comment = ({ commentData }: { commentData: ICommentInfo }) => {
-  const { content, userName, lastModified, votes } = commentData;
+  const { content, userName, lastModified, votes, user } = commentData;
   return (
     <StyledCommentPaper elevation={4} sx={StyledCommentPaperSxProp}>
       <VoteBox votes={votes} />
       <Box sx={{ flexGrow: 1 }}>
-        <UserInfo lastModified={lastModified} userName={userName} />
+        <UserInfo user={user} lastModified={lastModified} userName={userName} />
         <Box sx={{ my: 2 }}>{content}</Box>
       </Box>
     </StyledCommentPaper>

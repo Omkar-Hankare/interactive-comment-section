@@ -7,9 +7,22 @@ import { KeyboardArrowUp } from "@mui/icons-material";
 import CommentContainer from "../components/interactiveComments/CommentContainer";
 import NavBar from "../components/common/NavBar";
 import ScrollToAElement from "../components/common/ScrollToAElement";
-import { Fragment } from "react";
+import { Fragment, useMemo, useState } from "react";
+import { COMMENTS } from "../configs/constants/interactiveComments.constants";
+import { ICommentInfo } from "../configs/types/interactiveComments.types";
 
 export default function InteractiveComments() {
+  const [listOfComments, setListOfComments] =
+    useState<ICommentInfo[]>(COMMENTS);
+
+  const renderedComments = useMemo(
+    () =>
+      listOfComments.map((comment) => {
+        return <CommentContainer key={comment.id} singleComment={comment} />;
+      }),
+    [listOfComments]
+  );
+
   return (
     <Fragment>
       <CssBaseline />
@@ -28,9 +41,9 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
         </Box>
 
         {/* ////////////_____Interactive Comment Section starts______/////////// */}
-        <div>
-          <CommentContainer />
-        </div>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+          {renderedComments}
+        </Box>
       </Container>
 
       <ScrollToAElement querySelectorValue="#back-to-top-anchor">

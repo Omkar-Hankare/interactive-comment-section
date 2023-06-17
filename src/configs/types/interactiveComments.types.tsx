@@ -4,4 +4,11 @@ export interface ICommentInfo {
   lastModified: any;
   children: any[];
   votes: number;
+  id: any;
+  user: {
+    image: {
+      png: string;
+      webp: string;
+    };
+  };
 }

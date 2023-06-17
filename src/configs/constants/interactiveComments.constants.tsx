@@ -1,60 +1,113 @@
 export const SAMPLE = "SAMPLE";
-export const COMMENTS = {
-  content:
-    "Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.",
-  userName: "p_c",
-  lastModified: "p_lm",
-  votes: 19,
-  children: [
-    {
-      content:
-        "Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.",
-      userName: "c1",
-      lastModified: "c1",
-      votes: -1,
-      children: [
-        {
-          content:
-            "Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.",
-          userName: "cc1",
-          votes: 0,
-          lastModified: "cc1",
-          children: [
-            {
-              content:
-                "Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.",
-              userName: "ccc1",
-              lastModified: "ccc1",
-              votes: 5,
-              children: [],
-            },
-            {
-              content:
-                "Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.",
-              userName: "ccc2",
-              lastModified: "ccc2",
-              votes: 6,
-              children: [],
-            },
-          ],
-        },
-        {
-          content:
-            "Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.",
-          userName: "cc2",
-          lastModified: "cc2",
-          votes: 9,
-          children: [],
-        },
-      ],
+
+export const COMMENTS = [
+  {
+    id: 1,
+    content:
+      "Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.",
+    lastModified: "1 month ago",
+    votes: 12,
+    user: {
+      image: {
+        png: "/images/avatars/image-amyrobson.png",
+        webp: "/images/avatars/image-amyrobson.webp",
+      },
     },
-    {
-      content:
-        "Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.",
-      userName: "c2",
-      lastModified: "c2",
-      votes: -10,
-      children: [],
+    userName: "amyrobson",
+    children: [
+      {
+        id: 64,
+        content:
+          "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
+        lastModified: "1 week ago",
+        votes: 4,
+        replyingTo: "maxblagun",
+        user: {
+          image: {
+            png: "/images/avatars/image-ramsesmiron.png",
+            webp: "/images/avatars/image-ramsesmiron.webp",
+          },
+        },
+        userName: "ramsesmiron",
+        children: [
+          {
+            id: 1,
+            content:
+              "Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.",
+            lastModified: "1 month ago",
+            votes: 12,
+            user: {
+              image: {
+                png: "/images/avatars/image-amyrobson.png",
+                webp: "/images/avatars/image-amyrobson.webp",
+              },
+            },
+            userName: "amyrobson",
+          },
+        ],
+      },
+      {
+        id: 78,
+        content:
+          "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
+        lastModified: "1 week ago",
+        votes: 4,
+        replyingTo: "maxblagun",
+        user: {
+          image: {
+            png: "/images/avatars/image-ramsesmiron.png",
+            webp: "/images/avatars/image-ramsesmiron.webp",
+          },
+        },
+        userName: "ramsesmiron",
+        children: [],
+      },
+    ],
+  },
+  {
+    id: 2,
+    content:
+      "Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!",
+    lastModified: "2 weeks ago",
+    votes: 5,
+    userName: "maxblagun",
+    user: {
+      image: {
+        png: "/images/avatars/image-maxblagun.png",
+        webp: "/images/avatars/image-maxblagun.webp",
+      },
     },
-  ],
-};
+    children: [
+      {
+        id: 3,
+        content:
+          "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
+        lastModified: "1 week ago",
+        votes: 4,
+        replyingTo: "maxblagun",
+        user: {
+          image: {
+            png: "/images/avatars/image-ramsesmiron.png",
+            webp: "/images/avatars/image-ramsesmiron.webp",
+          },
+        },
+        userName: "ramsesmiron",
+      },
+      {
+        id: 4,
+        content:
+          "I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.",
+        lastModified: "2 days ago",
+        votes: 2,
+        replyingTo: "ramsesmiron",
+        user: {
+          image: {
+            png: "/images/avatars/image-juliusomo.png",
+            webp: "/images/avatars/image-juliusomo.webp",
+          },
+        },
+        userName: "juliusomo",
+      },
+    ],
+  },
+];

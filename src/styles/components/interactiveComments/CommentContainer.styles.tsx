@@ -1,7 +1,7 @@
 import { Box, Paper, styled } from "@mui/material";
 
 export const StyledCommentPaper = styled(Paper)`
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     flex-direction: column-reverse;
     align-items: flex-start;
   }
@@ -19,7 +19,7 @@ export const StyledCommentPaperSxProp = {
 };
 
 export const StyledVoteBox = styled(Box)`
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     flex-direction: row;
   }
   /* display: flex;
@@ -36,9 +36,17 @@ export const StyledVoteBoxSxProp = {
 };
 
 export const StyledUserInfoBox = styled(Box)`
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     flex-direction: column;
     align-items: flex-start;
+    > div > div {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    > div {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 `;
 

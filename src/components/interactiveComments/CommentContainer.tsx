@@ -4,8 +4,13 @@ import Comment from "./Comment/comment";
 import { COMMENTS } from "../../configs/constants/interactiveComments.constants";
 import { ICommentInfo } from "../../configs/types/interactiveComments.types";
 
-const CommentContainer = () => {
-  const [listOfComments, setListOfComments] = useState<ICommentInfo>(COMMENTS);
+const CommentContainer = ({
+  singleComment,
+}: {
+  singleComment: ICommentInfo;
+}) => {
+  const [parentComment, setParentComment] =
+    useState<ICommentInfo>(singleComment);
 
   /**
    * Generates recursive comments based on the given comment data.
@@ -40,8 +45,8 @@ const CommentContainer = () => {
   );
 
   const commentsList = useMemo(
-    () => recursiveCommentGenerator(listOfComments, "0"),
-    [listOfComments, recursiveCommentGenerator]
+    () => recursiveCommentGenerator(parentComment, "0"),
+    [parentComment, recursiveCommentGenerator]
   );
 
   return !!commentsList ? commentsList : <></>;
