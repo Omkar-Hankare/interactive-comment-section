@@ -28,20 +28,23 @@ export default function InteractiveComments() {
       <CssBaseline />
       <NavBar title="Interactive Comment Section" />
       <Toolbar id="back-to-top-anchor" />
-      <Container maxWidth="xl">
-        <Box sx={{ my: 2 }}>
-          {[...new Array(12)]
-            .map(
-              () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
-            )
-            .join("\n")}
+      <Container maxWidth="xl" sx={{ backgroundColor: "#FAF0E4" }}>
+        <Box
+          sx={{
+            my: 2,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "20rem",
+            backgroundColor: "#FAF0E4",
+            border: "2px dotted black",
+          }}
+        >
+          <h1>Some Awesome Content</h1>
         </Box>
 
         {/* ////////////_____Interactive Comment Section starts______/////////// */}
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 1, mb: 5 }}>
           {renderedComments}
         </Box>
       </Container>

@@ -41,12 +41,20 @@ export const VoteBox = ({ votes }: { votes: number }) => {
   }
 
   const { addVotebtnStyles, removebtnStyles } = useMemo(() => {
-    const addVotebtnStyles = {
+    const baseStyle = {
       minWidth: 3,
+      ":hover": {
+        backgroundColor: "#7f7ae0",
+        color: "#ffffff",
+      },
+    };
+
+    const addVotebtnStyles = {
+      ...baseStyle,
       color: voteCount === votes + 1 ? "#4a3dbe" : "black",
     };
     const removebtnStyles = {
-      minWidth: 3,
+      ...baseStyle,
       color: voteCount === votes - 1 ? "#4a3dbe" : "black",
     };
 

@@ -4,16 +4,19 @@ import Image from "next/image";
 import {
   StyledUserInfoBox,
   StyledUserInfoBoxSxProp,
+  replyBtnSxProps,
 } from "@/src/styles/components/interactiveComments/CommentContainer.styles";
 
 export const UserInfo = ({
   userName,
   lastModified,
   user,
+  createAReply,
 }: {
   user: any;
   userName: string;
   lastModified: any;
+  createAReply: () => void;
 }) => {
   /**
    * Handles the click event of the reply button.
@@ -21,10 +24,9 @@ export const UserInfo = ({
    * @returns {void}
    */
   function onReplyBtnClick(): void {
-    alert("Hehe, it doesn't matter");
+    createAReply();
   }
 
-  let png = user?.image?.png;
   let webp = user?.image?.webp;
 
   return (
@@ -41,9 +43,10 @@ export const UserInfo = ({
         </Typography>
         <Typography variant="body2">Last modified: {lastModified}</Typography>
       </Box>
-      <Button onClick={onReplyBtnClick} startIcon={<ReplyIcon />}>
-        <Typography variant="body2">Reply</Typography>
-      </Button>
+      <Box onClick={onReplyBtnClick} sx={replyBtnSxProps}>
+        <ReplyIcon />
+        <b>Reply</b>
+      </Box>
     </StyledUserInfoBox>
   );
 };
