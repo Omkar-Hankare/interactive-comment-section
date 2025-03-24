@@ -1,8 +1,7 @@
 import { Box } from "@mui/material";
-import React, { useMemo, useState, useCallback } from "react";
-import Comment from "./Comment/comment";
-import { COMMENTS } from "../../configs/constants/interactiveComments.constants";
+import { useCallback, useMemo, useState } from "react";
 import { ICommentInfo } from "../../configs/types/interactiveComments.types";
+import Comment from "./Comment/comment";
 
 const CommentContainer = ({
   singleComment,
