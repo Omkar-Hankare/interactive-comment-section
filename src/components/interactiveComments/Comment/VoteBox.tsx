@@ -1,11 +1,11 @@
-import { Button, Typography } from "@mui/material";
-import { useState, useMemo } from "react";
 import {
   StyledVoteBox,
   StyledVoteBoxSxProp,
-} from "../../../styles/components/interactiveComments/CommentContainer.styles";
+} from "@/src/styles/components/interactiveComments/CommentContainer.styles";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { Button, Typography } from "@mui/material";
+import { useMemo, useState } from "react";
 
 export const VoteBox = ({ votes }: { votes: number }) => {
   const [voteCount, setvoteCount] = useState<number>(votes);
