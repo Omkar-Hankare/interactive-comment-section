@@ -1,13 +1,13 @@
-import { Box } from "@mui/material";
-import React, { useState } from "react";
+import ReplyBox from "@/src/components/interactiveComments/Comment/ReplyBox";
+import { UserInfo } from "@/src/components/interactiveComments/Comment/UserInfo";
+import { VoteBox } from "@/src/components/interactiveComments/Comment/VoteBox";
+import { ICommentInfo } from "@/src/configs/types/interactiveComments.types";
 import {
   StyledCommentPaper,
   StyledCommentPaperSxProp,
-} from "../../../styles/components/interactiveComments/CommentContainer.styles";
-import { UserInfo } from "./UserInfo";
-import { VoteBox } from "./VoteBox";
-import { ICommentInfo } from "@/src/configs/types/interactiveComments.types";
-import ReplyBox from "./ReplyBox";
+} from "@/src/styles/components/interactiveComments/CommentContainer.styles";
+import { Box } from "@mui/material";
+import { useState } from "react";
 
 const Comment = ({ commentData }: { commentData: ICommentInfo }) => {
   const { content, userName, lastModified, votes, user } = commentData;
